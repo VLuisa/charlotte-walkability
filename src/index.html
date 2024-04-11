@@ -2,27 +2,32 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Mapbox Storytelling</title>
+    <title>Charlotte Walkability</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/mapbox/assembly/publisher-staging/src/svgs/mapbox.svg">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
         body {
             margin:0;
             padding:0;
-            font-family: sans-serif;
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #7841fd;
         }
         a, a:hover, a:visited {
-            color: #0071bc;
+            color: pink;
         }
         #map {
             top:0;
-            height: 100vh;
-            width:100vw;
+            height: 100%;
+            left: 40vw;
+            width:60vw;
             position: fixed;
+            z-index: 0;
         }
         #mapInset {
             bottom:50px;
@@ -47,13 +52,29 @@
         #header {
             margin: auto;
             width: 100%;
+            height: 100%;
             position: relative;
-            z-index: 5;
+            z-index: 20;
+            display: flex;
+            flex-flow: column nowrap;
+            background-color: #7841fd;
         }
+        #methods {
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 20;
+            display: flex;
+            flex-flow: column nowrap;
+            background-color: #472796;
+            padding-bottom: 20vh;
+        }
+
         #header h1, #header h2, #header p {
-            margin: 0;
             padding: 2vh 2vw;
-            text-align: center;
+            text-align: left;
+            max-width: 600px;
         }
         #footer {
             width: 100%;
@@ -95,7 +116,7 @@
         }
         .dark {
             color: #fafafa;
-            background-color: #444;
+            background-color: #7841fd;
         }
         .step {
             padding-bottom: 50vh;
@@ -109,7 +130,7 @@
         .step div {
             padding:  25px 50px;
             line-height: 25px;
-            font-size: 13px;
+            font-size: 22px;
         }
 
         .step img {
@@ -128,14 +149,121 @@
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
             touch-action: unset;
         }
+        #pink {
+            color:#e68ef1;
+        }
 
+        #green {
+            color: #47cce6;
+        }
+
+        h2 {
+            font-family: 'Sansita', sans-serif;
+            color: black;
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-top: 10vh;
+        }
+
+        #content {
+            max-width: 50vw;
+            min-width: 500px;
+            justify-self: center;
+            align-self: center;
+        }
+
+        #content p {
+            font-size: 1.2em;
+            color: white;
+        }
+
+        h4, h3, h5 {
+            font-family: 'Sansita';
+            font-weight: 800;
+        }
+
+        h3 {
+            font-size: 12em;
+            margin-top: -80px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            margin-bottom: 0;
+            font-size: 3.8em;
+            margin-left: -150px;
+        }
+
+        #splash-header h2 {
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        #splash-header {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #methods h2 {
+            color: white;
+        }
+
+        #methods p {
+            font-size: 1em;
+        }
         </style>
 </head>
 <body>
+    <div id="header" class="dark">
+        <div id="content">
+            <div id="splash-header">
+                <h4>I'd rather</h4>
+                <h3>walk</h3>
+                <h2>Exploring walkable areas in Charlotte, NC based on what matters to me</h2>
+                <p>By Luisa Vasquez</p>
+            </div>
+            <p>I moved to Charlotte less than a year ago. And one of the things I still cannot get used to is that I have to drive everywhere.</p>
+            <p>I used to live in Cambridge Massachusetts; a suburb across the river from Boston filled with cobblestone streets, ivy-covered brick buildings, and most memorably to me — easily accessible amenities that were all within walking distance.</p>
+            <h2>A picture of a perfect weekend</h2>
+            <p>To me a great weekend includes getting some books at the library, curling up to read them on a picnic blanket, and grabbing coffee at a cute coffee shop with some friends.</p>
+            <p>When I lived in Cambridge, all of these things were simple to do and easy to walk to while listening to some tunes.</p>
+            <h2>Walkability vs. Car culture</h2>
+            <p>While chatting with other Charlotte transplants who came from various cities I noticed that everyone had a different definition of what makes an area “walkable”, based on what matters to them.</p>
+            <p>Some come from cities with a big car culture and do not care about walkability when choosing where to live — they are content to drive everywhere.</p>
+            <p>Walkability is important to me, and until now I have always lived in walkable neighborhoods.</p>    
+            <p>I have joked that I would deem an area walkable if I could walk to the library and a cute coffee shop in 20 minutes.</p>    
 
+            <h2>Where could I live in Charlotte?</h2>
+            <p>I had a hunch that my low-estimation of Charlotte's walkability was colored by the exact area I live in, and likely doesn't reflect the experience of living everywhere in the city limits.</p>
+            <p>So I decided to create a personal “walkability index” based on my preferences, to determine whether there's anywhere in Charlotte that would meet my walkability criteria.</p>
+        </div>    
+    </div>
 <div id="map"></div>
 <div id="mapInset"></div>
 <div id="story"></div>
+<div id="header">
+    <div id="content">
+        <p>My walkability criteria was totally made up. But there are urban planning concepts that also take into account the distance it takes residents to easily commute to certain key amenities.</p>
+        <p>These concepts, such as the "15-minute" city and the "20-minute" city, take the criteria much further. They include not just the walkind distances, but also biking, and public transportation.</p>
+        <p>The measure of "walkability" is not standardized, but it can also include pedestrian safety and the experience of walking. Is walking not only possible but actually enjoyable and preferable to driving? All of these nuances aren't captured by my simple thought experiment.</p>
+        <p>Like many other cities, the most walkable areas of Charlotte are in its downtown area, Uptown, and it's nearby neighborhoods like NoDa. These are the areas I should consider moving to so I can walk to the library, grab some books, and then read them while sipping on a cup of coffee. </p>
+    </div>
+    
+</div>
+<div id="methods">
+    <div id="content" >
+        <h2>Methods</h2>
+        <p>For calculating walkable areas I used atlas.co to calculate two isochrones for traveling 20 minutes on foot from each point. I dissolved the isochrones from each point into a shape: one for libraries and one for coffee shops.  The final “walkable” regions were calculated by taking the intersection of the two aforementioned isochrone shapes.</p>
+        <p>For library data I used a dataset of <a href="https://data.charlottenc.gov/datasets/2624c30596134e2591056e53709eba4b/explore">Libraries from the City of Charlotte Open Data</a> portal. For coffee shops I queried Open Street Map data for “cafe” type amenities on March 13, 2024 and manually removed any coffee shops in the Airport. I removed any libraries or coffee shops that sat outside of the city limits, even if they were technically designated to Charlotte.</p>
+        <p>First photo is from Unsplash and all others are Adobe Stock.</p>
+    </div>
+</div>
+
+
+</body>
 
 <script src="./config.js"></script>
 <script>
@@ -179,31 +307,31 @@ var story = document.getElementById('story');
 var features = document.createElement('div');
 features.setAttribute('id', 'features');
 
-var header = document.createElement('div');
+// var header = document.createElement('div');
 
-if (config.title) {
-    var titleText = document.createElement('h1');
-    titleText.innerText = config.title;
-    header.appendChild(titleText);
-}
+// if (config.title) {
+//     var titleText = document.createElement('h1');
+//     titleText.innerText = config.title;
+//     header.appendChild(titleText);
+// }
 
-if (config.subtitle) {
-    var subtitleText = document.createElement('h2');
-    subtitleText.innerText = config.subtitle;
-    header.appendChild(subtitleText);
-}
+// if (config.subtitle) {
+//     var subtitleText = document.createElement('h2');
+//     subtitleText.innerText = config.subtitle;
+//     header.appendChild(subtitleText);
+// }
 
-if (config.byline) {
-    var bylineText = document.createElement('p');
-    bylineText.innerText = config.byline;
-    header.appendChild(bylineText);
-}
+// if (config.byline) {
+//     var bylineText = document.createElement('p');
+//     bylineText.innerText = config.byline;
+//     header.appendChild(bylineText);
+// }
 
-if (header.innerText.length > 0) {
-    header.classList.add(config.theme);
-    header.setAttribute('id', 'header');
-    story.appendChild(header);
-}
+// if (header.innerText.length > 0) {
+//     header.classList.add(config.theme);
+//     header.setAttribute('id', 'header');
+//     story.appendChild(header);
+// }
 
 config.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
@@ -279,6 +407,8 @@ var map = new mapboxgl.Map({
     transformRequest: transformRequest,
     projection: config.projection
 });
+
+map.addControl(new mapboxgl.ScaleControl());
 
 // Create a inset map if enabled in config.js
 if (config.inset) {
