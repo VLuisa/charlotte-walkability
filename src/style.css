@@ -1,0 +1,266 @@
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #7841fd;
+}
+a, a:hover, a:visited {
+    color: pink;
+}
+#map {
+    top:0;
+    height: 100%;
+    left: 40vw;
+    width:60vw;
+    position: fixed;
+    z-index: 0;
+}
+#mapInset {
+    bottom:50px;
+    right:30px;
+    height: 180px;
+    width:250px;
+    max-width:100%;
+    position: fixed;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+#mapInset .mapboxgl-ctrl-bottom-left{
+    display: none;
+}
+@media (max-width: 500px) {
+    #mapInset {
+        display: none;
+    }
+}
+#header {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #7841fd;
+}
+#methods {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #472796;
+    padding-bottom: 20vh;
+}
+
+#header h1, #header h2, #header p, h5, img {
+    padding: 2vh 2vw;
+    text-align: left;
+    max-width: 600px;
+}
+#footer {
+    width: 100%;
+    min-height: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center;
+    line-height: 25px;
+    font-size: 13px;
+    position: relative;
+    z-index: 5;
+}
+#features {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+.hidden {
+    visibility: hidden;
+}
+.centered {
+    width: 50vw;
+    margin: 0 auto;
+}
+.lefty {
+    width: 33vw;
+    margin-left: 5vw;
+}
+.righty {
+    width: 33vw;
+    margin-left: 62vw;
+}
+.fully {
+    width: 100%;
+    margin: auto;
+}
+.light {
+    color: #444;
+    background-color: #fafafa;
+}
+.dark {
+    color: #fafafa;
+    background-color: #7841fd;
+}
+.step {
+    padding-bottom: 50vh;
+    /* margin-bottom: 10vh; */
+    opacity: 0.25;
+}
+.step.active {
+    opacity: 0.9;
+}
+
+.step div {
+    padding:  25px 50px;
+    line-height: 25px;
+    font-size: 22px;
+}
+
+.step img {
+    width: 100%;
+}
+
+@media (max-width: 750px) {
+    .centered, .lefty, .righty, .fully {
+        width: 90vw;
+        margin: 0 auto;
+    }
+}
+
+/* Fix issue on mobile browser where scroll breaks  */
+.mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
+.mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
+    touch-action: unset;
+}
+#pink {
+    color:#e68ef1;
+}
+
+#green {
+    color: #47cce6;
+}
+
+h2 {
+    font-family: 'Sansita', sans-serif;
+    color: black;
+    font-size: 2.5em;
+    font-weight: 800;
+    margin-top: 10vh;
+}
+
+#content {
+    max-width: 50vw;
+    min-width: 500px;
+    justify-self: center;
+    align-self: center;
+}
+
+#content p {
+    font-size: 1.2em;
+    color: white;
+}
+
+h4, h3, h5 {
+    font-family: 'Sansita';
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 12em;
+    margin-top: -80px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-bottom: 0;
+    font-size: 3.8em;
+    margin-left: -150px;
+}
+
+h5 {
+    font-size: 2em;
+    padding: 0 2vw 0 2vw;
+    margin-bottom: -2vh;
+}
+
+h5 em {
+    font-weight: 200;
+}
+
+#splash-header h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#splash-header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+#methods h2 {
+    color: white;
+}
+
+#methods p {
+    font-size: 1em;
+}
+
+img {
+    width: 80%;
+}
+
+#left-splash-coffee {
+    position: absolute;
+    margin-left: 0;
+    padding: 0;
+    margin-top: 800px;
+    height: 80vh;
+    width: auto;
+    z-index: -1;
+}
+
+#header-splash-img {
+    position: absolute;
+    right: 0;
+    margin-right: 0;
+    padding: 0;
+    margin-top: 0;
+    height: 680px;
+    width: auto;
+    z-index: -1;
+}
+
+#right-splash-coffee-books {
+    position: absolute;
+    right: 0;
+    margin-right: 0;
+    padding: 0;
+    margin-top: 2500px;
+    height: 80vh;
+    width: auto;
+    z-index: -1;
+}
+
+#left-splash-cd {
+    position: absolute;
+    margin-left: 0;
+    padding: 0;
+    margin-top: 150px;
+    height: 60vh;
+    width: auto;
+    z-index: -1;
+}
+
+#stars-img {
+    position: absolute;
+    width: 10vw;
+    margin-top: -50vh;
+    margin-left: -600px;
+}
