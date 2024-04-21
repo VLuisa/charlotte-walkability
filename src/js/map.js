@@ -48,11 +48,11 @@ config.chapters.forEach((record, idx) => {
     chapter.appendChild(title);
   }
 
-  if (record.image) {
-    var image = new Image();
-    image.src = record.image;
-    chapter.appendChild(image);
-  }
+  //   if (record.image) {
+  //     var image = new Image();
+  //     image.src = record.image;
+  //     chapter.appendChild(image);
+  //   }
 
   if (record.description) {
     var story = document.createElement("p");
@@ -224,6 +224,23 @@ map.on("load", function () {
             )[0]
             .scrollIntoView();
         });
+      }
+
+      var current_chapter = config.chapters.findIndex(
+        (chap) => chap.id === response.element.id
+      );
+      var chapter = config.chapters[current_chapter];
+
+      //   if (config.chapters[current_chapter].image) {
+      //     var currentImage = config.chapters[current_chapter].image;
+      //     var imageElement = document.getElementById("scroll-image");
+      //     imageElement.src = currentImage;
+      //   }
+
+      if (chapter.image) {
+        var currentImage = chapter.image;
+        var imageElement = document.getElementById("scroll-image");
+        imageElement.src = currentImage;
       }
     })
     .onStepExit((response) => {

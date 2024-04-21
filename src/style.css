@@ -57,7 +57,7 @@ a, a:hover, a:visited {
     padding-bottom: 20vh;
 }
 
-#header h1, #header h2, #header p, h5, img {
+#header h1, #header h2, h5, img {
     padding: 2vh 2vw;
     text-align: left;
     max-width: 600px;
@@ -145,6 +145,14 @@ a, a:hover, a:visited {
 
 #intersection {
     color: #B1E716;
+}
+
+#scroll-image {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999999;
+    width: 20vw;
 }
 
 h2 {

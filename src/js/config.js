@@ -74,6 +74,7 @@ var config = {
         bearing: 0,
       },
       mapAnimation: "flyTo",
+      image: "imgs/legend0.png",
       rotateAnimation: false,
       callback: "",
       onChapterEnter: [{ layer: "city-label", opacity: 1 }],
@@ -88,6 +89,7 @@ var config = {
       id: "chapter-2",
       alignment: "left",
       hidden: false,
+      image: "imgs/legend1a.png",
       description:
         "My first “walkability” criteria was easy access to a library. So I found all of the <strong>public libraries</strong> and plotted them as <strong id='pink'>pink dots</strong> on the map.",
       location: {
@@ -124,6 +126,7 @@ var config = {
         pitch: 0,
         bearing: 0,
       },
+      image: "imgs/legend1.png",
       rotateAnimation: false,
       callback: "",
       onChapterEnter: [
@@ -157,6 +160,7 @@ var config = {
         bearing: 0,
       },
       rotateAnimation: false,
+      image: "imgs/legend2.png",
       callback: "",
       onChapterEnter: [
         {
@@ -181,6 +185,7 @@ var config = {
       id: "chapter-5",
       alignment: "left",
       hidden: false,
+      image: "imgs/legend2.png",
       description:
         "The areas where the <strong id='pink'>library</strong> and <strong id='green'>coffee</strong> shapes overlap are places I could live where I'd be able to walk to a library <strong>and</strong> and coffee shop within 20 minutes.",
       location: {
@@ -216,6 +221,7 @@ var config = {
       id: "chapter-6",
       alignment: "left",
       hidden: false,
+      image: "imgs/legend3.png",
       description:
         "Focusing on just where those areas <strong id='intersection'>overlap</strong> reveals the “most walkable” areas in Charlotte by my (totally made up) criteria.",
       location: {
@@ -244,6 +250,7 @@ var config = {
       alignment: "left",
       hidden: false,
       mapAnimation: "flyTo",
+      image: "imgs/legend4.png",
       description:
         "It's clear that the largest “walkable” area of Charlotte is its center city and downtown area, called Uptown.",
       location: {
@@ -267,6 +274,7 @@ var config = {
       alignment: "left",
       hidden: false,
       mapAnimation: "flyTo",
+      image: "imgs/legend4.png",
       description:
         "University of North Carolina (UNC) Charlotte is also walkable which makes sense given that students need caffeine and books.",
       location: {
@@ -285,10 +293,11 @@ var config = {
       ],
     },
     {
-      id: "chapter-",
+      id: "chapter-9",
       alignment: "left",
       hidden: false,
       mapAnimation: "flyTo",
+      image: "imgs/legend4.png",
       description:
         "Besides those two, there are only a handful of neighborhoods that have easy walking access to these amenities.",
       location: {
@@ -302,6 +311,33 @@ var config = {
       onChapterEnter: [
         {
           layer: "intersection",
+          opacity: 1,
+        },
+      ],
+    },
+    {
+      id: "chapter-10",
+      alignment: "left",
+      hidden: true,
+      mapAnimation: "flyTo",
+      image: "imgs/legend0.png",
+      description:
+        "Besides those two, there are only a handful of neighborhoods that have easy walking access to these amenities.",
+      location: {
+        center: [-80.84363, 35.20505],
+        zoom: 9.81,
+        pitch: 0,
+        bearing: 0,
+      },
+      rotateAnimation: false,
+      callback: "",
+      onChapterEnter: [
+        {
+          layer: "places",
+          opacity: 0,
+        },
+        {
+          layer: "city-label",
           opacity: 1,
         },
       ],
