@@ -193,15 +193,11 @@ var config = {
       callback: "",
       onChapterEnter: [
         {
-          layer: "library-points",
-          opacity: 0,
-        },
-        {
-          layer: "coffee-points",
-          opacity: 0,
-        },
-        {
           layer: "walking-library",
+          opacity: 1,
+        },
+        {
+          layer: "walking-coffee",
           opacity: 1,
         },
       ],
@@ -221,7 +217,7 @@ var config = {
       alignment: "left",
       hidden: false,
       description:
-        "The intersection of these areas reveal the “most walkable” areas in Charlotte by my (totally made up) criteria.",
+        "Focusing on just where those areas <strong id='intersection'>overlap</strong> reveals the “most walkable” areas in Charlotte by my (totally made up) criteria.",
       location: {
         center: [-80.84363, 35.20505],
         zoom: 9.81,
@@ -236,7 +232,12 @@ var config = {
           opacity: 1,
         },
       ],
-      onChapterExit: [],
+      onChapterExit: [
+        {
+          layer: "intersection",
+          opacity: 0,
+        },
+      ],
     },
     {
       id: "chapter-7",
@@ -267,7 +268,7 @@ var config = {
       hidden: false,
       mapAnimation: "flyTo",
       description:
-        "UNC Charlotte is also walkable which makes sense given that students need caffeine and books.",
+        "University of North Carolina (UNC) Charlotte is also walkable which makes sense given that students need caffeine and books.",
       location: {
         center: [-80.7348, 35.30737],
         zoom: 11.17,
@@ -276,6 +277,12 @@ var config = {
       },
       rotateAnimation: false,
       callback: "",
+      onChapterEnter: [
+        {
+          layer: "intersection",
+          opacity: 1,
+        },
+      ],
     },
     {
       id: "chapter-",
@@ -292,6 +299,12 @@ var config = {
       },
       rotateAnimation: false,
       callback: "",
+      onChapterEnter: [
+        {
+          layer: "intersection",
+          opacity: 1,
+        },
+      ],
     },
   ],
 };

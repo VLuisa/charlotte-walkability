@@ -136,11 +136,15 @@ a, a:hover, a:visited {
     touch-action: unset;
 }
 #pink {
-    color:#e68ef1;
+    color:#f4a5ff;
 }
 
 #green {
-    color: #47cce6;
+    color: #34dce5;
+}
+
+#intersection {
+    color: #B1E716;
 }
 
 h2 {
