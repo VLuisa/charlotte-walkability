@@ -58,7 +58,9 @@ a, a:hover, a:visited {
 }
 
 #header h1, #header h2, h5, img {
-    padding: 2vh 2vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: none;
     text-align: left;
     max-width: 600px;
 }
@@ -194,7 +196,7 @@ h4 {
 
 h5 {
     font-size: 2em;
-    padding: 0 2vw 0 2vw;
+    padding: 2vw 0 2vw 0;
     margin-bottom: -2vh;
 }
 
