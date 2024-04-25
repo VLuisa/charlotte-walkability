@@ -266,6 +266,10 @@ var config = {
           layer: "intersection",
           opacity: 1,
         },
+        {
+          layer: "places",
+          opacity: 1,
+        },
       ],
     },
     {
