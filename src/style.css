@@ -11,7 +11,7 @@ a, a:hover, a:visited {
     top:0;
     height: 100%;
     left: 40vw;
-    width:60vw;
+    width: 60vw;
     position: fixed;
     z-index: 0;
 }
@@ -30,9 +30,14 @@ a, a:hover, a:visited {
 #mapInset .mapboxgl-ctrl-bottom-left{
     display: none;
 }
-@media (max-width: 500px) {
+@media (max-width: 650px) {
     #mapInset {
         display: none;
+    }
+
+    #map {
+        left: 0;
+        width: 100vw;
     }
 }
 #header {

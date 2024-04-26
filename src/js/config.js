@@ -16,7 +16,7 @@ var config = {
     {
       id: "chapter-0",
       alignment: "left",
-      hidden: false,
+      hidden: true,
       description: "",
       location: {
         center: [-80.84363, 35.20505],
