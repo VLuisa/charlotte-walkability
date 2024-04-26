@@ -278,6 +278,7 @@ img {
 @media (max-width: 650px) {
     #mapInset {
         display: none;
+        min-width: 100px;
     }
 
     #map {
@@ -291,5 +292,27 @@ img {
         left: 1vw;
         z-index: 999999;
         width: 40vw;
+    }
+
+    #content {
+        min-width: 100px;
+        max-width: 90vw;
+        justify-self: center;
+        align-self: center;
+    }
+
+    #splash-header h4 {
+        font-size: 2em;
+        line-height: 100%;
+    }
+
+    #splash-header h3 {
+        font-size: 6em;
+        margin-top: 1px;
+        line-height: 90%;
+    }
+
+    h2 {
+        font-size: 2em;
     }
 }
