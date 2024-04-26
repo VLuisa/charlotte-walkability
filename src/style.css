@@ -315,4 +315,8 @@ img {
     h2 {
         font-size: 2em;
     }
+
+    .splash {
+        max-height: 30vh;
+    }
 }
