@@ -91,7 +91,7 @@ var config = {
       hidden: false,
       image: "imgs/legend1a.png",
       description:
-        "My first “walkability” criteria was easy access to a library. So I found all of the <strong>public libraries</strong> and plotted them as <strong id='pink'>pink dots</strong> on the map.",
+        "My first “walkability” criteria was easy access to a library. So I found all of the <strong>public libraries</strong> within city boundaries and plotted them as <strong id='pink'>pink dots</strong> on the map.",
       location: {
         center: [-80.84363, 35.20505],
         zoom: 9.81,
