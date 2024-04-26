@@ -312,11 +312,21 @@ img {
         line-height: 90%;
     }
 
+    #splash-header h2 {
+        font-size: 1.3em;
+    }
+
     h2 {
         font-size: 2em;
     }
 
     .splash {
         max-height: 30vh;
+    }
+
+    .step div {
+        padding: 10px;
+        line-height: 25px;
+        font-size: 16px;
     }
 }
